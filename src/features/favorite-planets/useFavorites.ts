@@ -2,10 +2,9 @@ import {storage} from "adapters/storage";
 import {useState} from "react";
 
 export function useFavorites(): [string[], (id: string) => void] {
-    const [favorites, setFavorites] = useState(storage.getItemArray('favorite'))
-
+    const [favorites, setFavorites] = useState(storage.getItemArray('favorites'))
     const toggleFavorites = (id: string) => {
-        let newFavorites = [];
+        let newFavorites;
 
         if (favorites.includes(id)) {
             newFavorites = favorites.filter((i) => i !== id)

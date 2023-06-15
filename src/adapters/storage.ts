@@ -5,9 +5,9 @@ export type StorageAdapter = {
 
 export const storage: StorageAdapter = {
     getItemArray: (key: string) => {
-        const favoritesString = localStorage.getItem('favorites')
+        const favoritesString = localStorage.getItem(key)
         return favoritesString?.length ? favoritesString.split(',') : []
     },
-    setItemArray: (key: string, value) => localStorage.setItem('favorites', value.join(',')),
+    setItemArray: (key: string, value) => localStorage.setItem(key, value.join(',')),
 };
 

@@ -20,7 +20,7 @@ const Spinner = styled.div`
     animation: spinner 1.2s linear infinite;
   }
 
-  keyframes spinner {
+  @keyframes spinner {
     0% {
       transform: rotate(0deg);
     }

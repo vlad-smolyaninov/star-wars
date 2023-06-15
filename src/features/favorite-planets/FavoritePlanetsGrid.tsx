@@ -18,7 +18,7 @@ const PlanetCard = styled.div`
   border: 1px solid ${({theme}) => theme.colors.contrastAccentDark};
   border-radius: 8px;
   padding-bottom: 20px;
-  box-shadow: 1px 1px 2px 0px ${({theme}) => theme.colors.contrastAccentDark};
+  box-shadow: 1px 1px 2px 0 ${({theme}) => theme.colors.contrastAccentDark};
 
   h3 {
     padding: 0 20px;
@@ -55,7 +55,7 @@ export const FavoritePlanetsGrid: React.FC<{
     planets: Planet[],
     onRemove: (id: string) => void
     favorites: string[]
-}> = ({planets, onRemove, favorites}) => {
+}> = ({planets, onRemove}) => {
 
     if (planets.length === 0) return <NoFavoritesPlaceholder>No favorites</NoFavoritesPlaceholder>
 
