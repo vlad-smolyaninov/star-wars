@@ -1,0 +1,17 @@
+# See: https://graphql-code-generator.com/docs/getting-started/codegen-config
+overwrite: true
+generates:
+  src/types/generated.ts:
+    # This is the defined client side schema file. It will first load the root schema defined above, and then load this (see: https://graphql-code-generator.com/docs/getting-started/schema-field#local-graphql-files)
+    schema:
+      - https://swapi-graphql.netlify.app/.netlify/functions/index
+    # This is where the gql queries/subscripts/mutations reside
+    documents: "src/**/*.ts"
+    plugins:
+      - add:
+          content: /* eslint-disable */
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
